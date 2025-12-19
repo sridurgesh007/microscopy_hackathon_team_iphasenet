@@ -59,6 +59,22 @@ The figure below demonstrates the model's ability to solve the inverse physics p
   <em>Figure: (Left) Raw Noisy STEM Input showing scanning artifacts. (Middle) Model Prediction recovering atomic columns. (Right) Ground Truth Electrostatic Potential.</em>
 </p>
 
+## 🤖 Pre-trained Models
+
+We provide the official pre-trained weights for the **SwinUNETR** model, trained on the full dataset (6,000 samples) for 100 epochs.
+
+| Model Version | Best PSNR | Size | Download |
+| :--- | :--- | :--- | :--- |
+| **STEM-Recon-v1** | **54.45 dB** | [![Download](https://img.shields.io/badge/Download-Weights-blue?style=flat-square&logo=google-drive&logoColor=white)](https://drive.google.com/drive/folders/1K5q5mC21iD3uZS6_1AiYm2ZORb84-5-q?usp=drive_link) |
+
+### ⚡ Quick Start
+1.  **Download** the `.pt` file from the link above.
+2.  **Place** the file in the `checkpoints_ddp/` folder.
+3.  **Run Inference:**
+    ```bash
+    python inference.py --ckpt checkpoints_ddp/best_model.pt
+    ```
+
 ## 📊 Quantitative Results
 
 Our model achieves high-fidelity reconstruction of atomic potentials, recovering physical values (Volts) with significant accuracy.
