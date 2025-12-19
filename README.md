@@ -8,7 +8,7 @@ This repository contains a PyTorch implementation for reconstructing quantitativ
 ##Architecture
 
 <p align="center">
-  <img src="assets/archi.jpeg" width="600">
+  <img src="assets/archi.png" width="600">
 </p>
 
 
@@ -31,7 +31,7 @@ The full dataset (Train/Val splits, `.npz` format) is hosted on Google Drive.
 
 ## Dataset sample
 <p align="center">
-  <img src="assets/sample_data.png" width="600">
+  <img src="assets/sample_data.jpeg" width="600">
 </p>
 
 ### Metadata
@@ -49,7 +49,15 @@ The model utilizes an **8-Channel Input Tensor** `(B, 8, 256, 256)` that fuses v
 | **7** | **Rotation $\gamma$** | Metadata | Crystal tilt/rotation (Euler angle Z). | $x / 360.0$ (Degrees $\rightarrow$ 0-1) |
 
 
+## 🖼️ Visual Reconstruction Results
 
+The figure below demonstrates the model's ability to solve the inverse physics problem on a validation sample .
+
+<p align="center">
+  <img src="assets/results.jpeg" width="600" alt="Model Prediction vs Ground Truth">
+  <br>
+  <em>Figure: (Left) Raw Noisy STEM Input showing scanning artifacts. (Middle) Model Prediction recovering atomic columns. (Right) Ground Truth Electrostatic Potential.</em>
+</p>
 
 ## 📊 Quantitative Results
 
