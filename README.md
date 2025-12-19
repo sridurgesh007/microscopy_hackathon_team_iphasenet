@@ -65,7 +65,7 @@ We provide the official pre-trained weights for the **SwinUNETR** model, trained
 
 | Model Version | Best PSNR | Size | Download |
 | :--- | :--- | :--- | :--- |
-| **STEM-Recon-v1** | **54.45 dB** | [![Download](https://img.shields.io/badge/Download-Weights-blue?style=flat-square&logo=google-drive&logoColor=white)](https://drive.google.com/drive/folders/1K5q5mC21iD3uZS6_1AiYm2ZORb84-5-q?usp=drive_link) |
+| **STEM-Recon-v1** | **54.45 dB** |~95 MB | [![Download](https://img.shields.io/badge/Download-Weights-blue?style=flat-square&logo=google-drive&logoColor=white)](https://drive.google.com/drive/folders/1K5q5mC21iD3uZS6_1AiYm2ZORb84-5-q?usp=drive_link) |
 
 ### ⚡ Quick Start
 1.  **Download** the `.pt` file from the link above.
