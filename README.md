@@ -12,6 +12,45 @@ This repository contains a PyTorch implementation for reconstructing quantitativ
 </p>
 
 
+📚 Dataset & Quality
+The dataset consists of high-fidelity Scanning Transmission Electron Microscopy (STEM) simulations generated using the Multislice algorithm. It is designed to rigorously test the model's ability to solve the inverse physics problem under diverse and challenging conditions.
+
+✨ Dataset SpecificationsSource: 
+Simulated physics data (Multislice method) ensuring Ground Truth accuracy.
+Materials: Varied crystal structures including GaN (Gallium Nitride), LiCoO2, and Perovskite (PVSK) , MoS2, KnBO3.
+Resolution: 256 $\times$ 256 pixels per sample.
+Physics Variations:Thickness: diverese sample thickness [20,40,60,80,100,120,150].
+Rotation: Random crystal tilts (0° - 360°) to introduce challenging projection overlaps.
+Noise: Realistic Poisson/Gaussian noise injected to simulate detector imperfections while training.
+
+
+### 📥 Dataset Download
+The full dataset (Train/Val splits, `.npz` format) is hosted on Google Drive.
+
+[![Download Dataset](https://img.shields.io/badge/Dataset-Download%20from%20Drive-4285F4?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/drive/folders/1t1bectJp9r56jiHUq697msGyd6i7WmDj?usp=drive_link)
+
+## Dataset sample
+<p align="center">
+  <img src="assets/sample_data.png" width="600">
+</p>
+
+### Metadata
+The model utilizes an **8-Channel Input Tensor** `(B, 8, 256, 256)` that fuses visual data with physical metadata. This "Early Fusion" strategy allows the network to condition its predictions on the sample's physical properties.
+
+| Channel | Component | Type | Description | Normalization |
+| :--- | :--- | :--- | :--- | :--- |
+| **0** | **STEM Segment 1** | Visual | Detector quadrant 1 (Top-Left view). | Min-Max (0.0 - 1.0) |
+| **1** | **STEM Segment 2** | Visual | Detector quadrant 2 (Top-Right view). | Min-Max (0.0 - 1.0) |
+| **2** | **STEM Segment 3** | Visual | Detector quadrant 3 (Bottom-Left view). | Min-Max (0.0 - 1.0) |
+| **3** | **STEM Segment 4** | Visual | Detector quadrant 4 (Bottom-Right view). | Min-Max (0.0 - 1.0) |
+| **4** | **Thickness** | Metadata | Sample thickness in nanometers. | $x / 100.0$ (e.g., 50nm $\rightarrow$ 0.5) |
+| **5** | **Rotation $\alpha$** | Metadata | Crystal tilt/rotation (Euler angle X). | $x / 360.0$ (Degrees $\rightarrow$ 0-1) |
+| **6** | **Rotation $\beta$** | Metadata | Crystal tilt/rotation (Euler angle Y). | $x / 360.0$ (Degrees $\rightarrow$ 0-1) |
+| **7** | **Rotation $\gamma$** | Metadata | Crystal tilt/rotation (Euler angle Z). | $x / 360.0$ (Degrees $\rightarrow$ 0-1) |
+
+
+
+
 ## 📊 Quantitative Results
 
 Our model achieves high-fidelity reconstruction of atomic potentials, recovering physical values (Volts) with significant accuracy.
