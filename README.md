@@ -13,7 +13,7 @@ This repository contains a PyTorch implementation for reconstructing quantitativ
 
 
 📚 Dataset & Quality
-The dataset consists of high-fidelity Scanning Transmission Electron Microscopy (STEM) simulations generated using the Multislice algorithm. It is designed to rigorously test the model's ability to solve the inverse physics problem under diverse and challenging conditions.
+The dataset consists of high-fidelity Scanning Transmission Electron Microscopy (STEM) simulations generated using the Multislice algorithm. It is designed to rigorously test the model's ability to solve the inverse physics problem under diverse and challenging conditions contributing to microscopy ML community from out team.
 
 ✨ Dataset SpecificationsSource: 
 Simulated physics data (Multislice method) ensuring Ground Truth accuracy.
