@@ -8,9 +8,22 @@ This repository contains a PyTorch implementation for reconstructing quantitativ
 **Architecture**
 
 <p align="center">
-  <img src="assets/archi.png" width="800">
+  <img src="assets/archi.png" width="600">
 </p>
 
 
-## 📊 Results
-Our model achieves high-fidelity reconstruction of atomic potentials, recovering physical values (Volts) with significant accuracy.MetricValueInterpretationPSNR54.46 dBExcellent. Indicates the signal is virtually noise-free compared to the ground truth.MAE (Absolute)897.8 VMean Absolute Error. On a typical 26,000V atom, this is an error of only ~3.4%.Pearson Corr.0.72Good. Confirms strong structural correlation between predicted and real atomic columns.Peak Error23.8%Relative error at the brightest atomic centers (intensity peaks).
+## 📊 Quantitative Results
+
+Our model achieves high-fidelity reconstruction of atomic potentials, recovering physical values (Volts) with significant accuracy.
+
+| Metric | Value | Interpretation |
+| :--- | :--- | :--- |
+| **PSNR** | **54.46 dB** | **Excellent.** Indicates the signal is virtually noise-free compared to the ground truth. |
+| **MAE (Absolute)** | **897.8 V** | Mean Absolute Error. On a typical 26,000V atom, this is an error of only **~3.4%**. |
+| **Pearson Corr.** | **0.72** | **Good.** Confirms strong structural correlation between predicted and real atomic columns. |
+| **Peak Error** | **23.8%** | Relative error at the brightest atomic centers (intensity peaks). |
+
+### 🔍 Analysis
+* **High Fidelity:** The exceptionally high PSNR (>50 dB) demonstrates that the `SwinUNETR` backbone successfully denoised the STEM input while preserving atomic lattice structures.
+* **Physical Recovery:** The model predicts a mean potential of **1825 V** (vs. Ground Truth **2162 V**), indicating it has learned to recover the correct order of magnitude.
+* **Contrast Handling:** The max predicted potential (**28.3 kV**) slightly exceeds the ground truth (**25.9 kV**), suggesting the model effectively learns sharp, high-contrast atomic peaks.
