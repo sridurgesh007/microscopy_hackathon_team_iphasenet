@@ -1,4 +1,4 @@
-# microscopy_hackathon_team_iphasenet
+# Microscopy_Hackathon_Team_iphasenet
 **Presenting repo of our team iPhaseNet**
 
 **Deep Learning for Inverse Problems in Scanning Transmission Electron Microscopy (STEM):**
