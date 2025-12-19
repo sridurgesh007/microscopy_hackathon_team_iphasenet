@@ -7,3 +7,6 @@ This repository contains a PyTorch implementation for reconstructing quantitativ
 
 **Architecture**
 
+<p align="center">
+  <img src="assets/archi.png" width="800">
+</p>
