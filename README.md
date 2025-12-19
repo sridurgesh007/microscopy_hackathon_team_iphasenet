@@ -72,8 +72,7 @@ We provide the official pre-trained weights for the **SwinUNETR** model, trained
 2.  **Place** the file in the `checkpoints_ddp/` folder.
 3.  **Run Inference:**
     ```bash
-    python inference.py \
-    --data_dir hackathon_dataset_npz_final --split val --ckpt checkpoints_ddp/best_model.pt --out_dir infer_val --model swin --metadata_mode sincos7 --scaling_factor 600000 --save_examples 30
+    python inference.py --data_dir hackathon_dataset_npz_final --split val --ckpt checkpoints_ddp/best_model.pt --out_dir infer_val --model swin --metadata_mode sincos7 --scaling_factor 600000 --save_examples 30
     ```
 
 ## 📊 Quantitative Results
